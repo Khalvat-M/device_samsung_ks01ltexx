@@ -27,20 +27,12 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-
 #include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 #include <android-base/strings.h>
 
 #include "property_service.h"
-#include "vendor_init.h"
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
