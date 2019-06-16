@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2019 The CyanogenMod Project
+# Copyright (C) 2020 The Lineage OS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,31 +17,38 @@
 
 set -e
 
-export INITIAL_COPYRIGHT_YEAR=2019
+# Required!
+export DEVICE=ks01ltexx
+export VENDOR=samsung
+export DEVICE_BRINGUP_YEAR=2013
 
-DEVICE=ks01ltexx
-VENDOR=samsung
+
+INITIAL_COPYRIGHT_YEAR=2013
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$MY_DIR"/../../..
+LINEAGE_ROOT="$MY_DIR"/../../..
 
-HELPER="$CM_ROOT"/vendor/lineage/build/tools/extract_utils.sh
+HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
 fi
 . "$HELPER"
 
-# Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" true
+# Initialize the helper for device
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers
+write_headers "ks01ltexx ks01lteskt ks01ltektt ks01ltelgt"
 
-write_makefiles "$MY_DIR"/proprietary-files.txt
+# The standard device blobs
+write_makefiles "$MY_DIR"/proprietary-files.txt true
+
+# We are done!
+write_footers
 
 # Blobs for TWRP data decryption
 cat << EOF >> "$BOARDMK"
@@ -53,17 +60,19 @@ EOF
 # Finish
 write_footers
 
-if [ ! -z $VARIANT_COPYRIGHT_YEAR ]; then
-    export INITIAL_COPYRIGHT_YEAR=$VARIANT_COPYRIGHT_YEAR
+if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+    # Reinitialize the helper for device
+    INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
+    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false
+
+    # Copyright headers and guards
+    write_headers
+
+    # The standard device blobs
+    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
+
+    # We are done!
+    write_footers
 fi
 
-# Reinitialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
-
-for BLOB_LIST in "$MY_DIR"/../$DEVICE/device-proprietary-files*.txt; do
-    write_makefiles $BLOB_LIST
-done
-
-write_footers
-
-./../msm8974-common/setup-makefiles.sh $@
+./../../$VENDOR/$DEVICE/setup-makefiles.sh $@
