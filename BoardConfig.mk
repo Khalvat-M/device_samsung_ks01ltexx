@@ -91,9 +91,6 @@ TARGET_NEED_CAMERA_ZSL := true
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := //$(DEVICE_PATH):camera_parameters_samsung_msm8974
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Charger
-BOARD_CHARGER_ENABLE_SUSPEND := true
-
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
