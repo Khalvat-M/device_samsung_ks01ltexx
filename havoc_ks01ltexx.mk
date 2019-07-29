@@ -26,6 +26,12 @@ PRODUCT_NAME := havoc_ks01ltexx
 PRODUCT_DEVICE := ks01ltexx
 PRODUCT_MODEL := GT-I9506
 
+#export
+HAVOC_BUILD_TYPE := Official
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.havoc.maintainer=MBA65MUSIC❤Khalvat
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=ks01ltexx \
     TARGET_DEVICE=ks01lte \
