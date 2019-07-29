@@ -76,12 +76,12 @@ PRODUCT_PACKAGES += \
     libshim_camera
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
+#PRODUCT_PACKAGES += \
+#    FlipFlap
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
