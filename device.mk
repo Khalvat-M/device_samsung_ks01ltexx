@@ -69,7 +69,10 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth: prepatch to fix BT/WiFi bus lockups
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd
+    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd \
+    $(LOCAL_PATH)/bluetooth/btconf/auto_pair_devlist.conf:system/etc/bluetooth/auto_pair_devlist.conf \
+    $(LOCAL_PATH)/bluetooth/btconf/iop_device_list.conf:system/etc/bluetooth/iop_device_list.conf \
+    $(LOCAL_PATH)/bluetooth/btconf/iop_bt.db:system/etc/bluetooth/iop_bt.db
 
 # Camera
 PRODUCT_PACKAGES += \
