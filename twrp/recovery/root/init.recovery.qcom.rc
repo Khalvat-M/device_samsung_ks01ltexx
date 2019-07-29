@@ -9,6 +9,8 @@ service sbinqseecomd /sbin/qseecomd
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
 
+    setprop sys.usb.ffs.aio_compat 1
+
 on init
     mkdir /vendor/firmware
     mkdir /vendor/firmware/keymaster
