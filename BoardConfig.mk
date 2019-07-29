@@ -22,15 +22,19 @@ TARGET_OTA_ASSERT_DEVICE := ks01lte,ks01ltexx,GT-I9506
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
+# Architecture
+TARGET_CPU_SMP := true
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 zcache.enabled=1 zcache.compressor=lz4
-ifeq ($(RECOVERY_VARIANT),twrp)
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-endif
+
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -43,13 +47,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 
 # Use Snapdragon LLVM if available on build server
 TARGET_USE_SDCLANG := true
-#SDCLANG := true
-#SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
-#SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 
 # Enable SVELTE memory configuration
 MALLOC_SVELTE := true
-
 
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
@@ -94,6 +94,23 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12528352256 # 12528368640 - 16384
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# Optimizations
+ENABLE_SCHEDBOOST := true
+
+#BOARD_CHARGER_DISABLE_INIT_BLANK := true
+#TARGET_COMPILE_WITH_MSM_KERNEL := true
+# Generic AOSP image does NOT support HWC1
+#TARGET_USES_HWC2 := true
+
+# HWUI
+HWUI_COMPILE_FOR_PERF := true
+
+# Exclude serif fonts for saving system.img size.
+#EXCLUDE_SERIF_FONTS := true
+
+# Use mke2fs to create ext4 images
+TARGET_USES_MKE2FS := true
 
 # Power HAL
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(DEVICE_PATH)/power/power_ext.c
