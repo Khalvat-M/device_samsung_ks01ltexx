@@ -106,48 +106,12 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 BOARD_PROVIDES_LIBRIL := true
 TARGET_RIL_VARIANT := caf
 
-#RECOVERY_VARIANT := twrp
-# Recovery
-ifneq ($(RECOVERY_VARIANT),twrp)
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+-include $(DEVICE_PATH)/twrp.mk
+endif
+
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
-endif
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-BOARD_HAS_DOWNLOAD_MODE := true
-BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_HAS_NO_MISC_PARTITION := true
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_RECOVERY_SWIPE := true
-BOARD_SUPPRESS_SECURE_ERASE := true
-BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-# TWRP Recovery
-ifeq ($(RECOVERY_VARIANT),twrp)
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    ro.allow.mock.location=1 \
-    ro.debuggable=1 \
-    persist.sys.usb.config=adb
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.twrp
-DEVICE_RESOLUTION := 1080x1920
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_SDCARD_ON_DATA := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
-#TW_DEFAULT_LANGUAGE := ja
-TW_BRIGHTNESS_PATH := "/sys/devices/mdp.0/qcom\x2cmdss_fb_primary.182/leds/lcd-backlight/brightness"
-TW_MAX_BRIGHTNESS := 255
-TW_MTP_DEVICE := "/dev/mtp_usb"
-TW_NO_REBOOT_BOOTLOADER := true
-TW_HAS_DOWNLOAD_MODE := true
-TW_NO_EXFAT_FUSE := true
-TW_INCLUDE_CRYPTO := true
-TW_EXCLUDE_SUPERSU := true
-TW_USE_MINUI_CUSTOM_FONTS := true
-BOARD_GLOBAL_CFLAGS += -DTW_USE_MINUI_CUSTOM_FONTS
-endif
 
 # SELinux
 include $(DEVICE_PATH)/sepolicy/sepolicy.mk

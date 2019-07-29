@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2019 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 
 set -e
 
-export INITIAL_COPYRIGHT_YEAR=2015
+export INITIAL_COPYRIGHT_YEAR=2019
 
 DEVICE=ks01ltexx
 VENDOR=samsung
@@ -36,12 +36,34 @@ fi
 . "$HELPER"
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and guards
 write_headers
 
 write_makefiles "$MY_DIR"/proprietary-files.txt
 
+# Blobs for TWRP data decryption
+cat << EOF >> "$BOARDMK"
+ifeq (\$(WITH_TWRP),true)
+TARGET_RECOVERY_DEVICE_DIRS += vendor/$VENDOR/$DEVICE/proprietary
+endif
+EOF
+
 # Finish
 write_footers
+
+if [ ! -z $VARIANT_COPYRIGHT_YEAR ]; then
+    export INITIAL_COPYRIGHT_YEAR=$VARIANT_COPYRIGHT_YEAR
+fi
+
+# Reinitialize the helper for device
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+
+for BLOB_LIST in "$MY_DIR"/../$DEVICE/device-proprietary-files*.txt; do
+    write_makefiles $BLOB_LIST
+done
+
+write_footers
+
+./../msm8974-common/setup-makefiles.sh $@

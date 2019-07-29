@@ -50,9 +50,10 @@ else
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" true
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
+extract "$MY_DIR"/proprietary-files-twrp.txt "$SRC"
 
 DEVICE_BLOB_ROOT="$CM_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
@@ -63,5 +64,16 @@ sed -i 's|system/etc|vendor/etc|g;
 
 THERMAL_ENGINE="$DEVICE_BLOB_ROOT"/vendor/bin/thermal-engine
 sed -i 's|/system/etc|/vendor/etc|g' "$THERMAL_ENGINE"
+
+# Reinitialize the helper for device
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+
+for BLOB_LIST in "$MY_DIR"/../$DEVICE/device-proprietary-files*.txt; do
+    extract $BLOB_LIST "$SRC"
+done
+
+./../msm8974-common/extract-files.sh $@
+
+"$MY_DIR"/setup-makefiles.sh
 
 "$MY_DIR"/setup-makefiles.sh
