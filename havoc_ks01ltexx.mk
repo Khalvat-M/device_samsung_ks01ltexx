@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2014-2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 #
 
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common HavocOS stuff.
+$(call inherit-product, vendor/havoc/config/common.mk)
 
 $(call inherit-product, device/samsung/ks01ltexx/full_ks01ltexx.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_ks01ltexx
+PRODUCT_NAME := havoc_ks01ltexx
 PRODUCT_DEVICE := ks01ltexx
 PRODUCT_MODEL := GT-I9506
 
