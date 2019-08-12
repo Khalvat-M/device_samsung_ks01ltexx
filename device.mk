@@ -163,3 +163,6 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 $(call inherit-product, device/samsung/ks01ltexx/nfc/bcm2079x/product.mk)
+
+# System Properties
+$(call inherit-product, device/samsung/ks01ltexx/system_prop.mk)
