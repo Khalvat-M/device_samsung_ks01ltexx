@@ -134,6 +134,9 @@ include $(DEVICE_PATH)/sepolicy/sepolicy.mk
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
+# System Server
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_WLAN_DEVICE := bcmdhd
