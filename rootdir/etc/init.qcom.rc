@@ -695,6 +695,9 @@ on early-boot
     mkdir /data/nfc 0700 nfc nfc
     mkdir /data/nfc/param 0700 nfc nfc
 
+    # Set freeze timeout to 2 seconds
+    write /sys/power/pm_freeze_timeout 2000
+
     # Permissions for Charging
     chown system radio /sys/class/power_supply/battery/batt_reset_soc
     chown system radio /sys/class/power_supply/battery/update
