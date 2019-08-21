@@ -94,7 +94,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Optimizations
-ENABLE_SCHEDBOOST := true
+#ENABLE_SCHEDBOOST := true
 
 #BOARD_CHARGER_DISABLE_INIT_BLANK := true
 #TARGET_COMPILE_WITH_MSM_KERNEL := true
@@ -102,7 +102,7 @@ ENABLE_SCHEDBOOST := true
 #TARGET_USES_HWC2 := true
 
 # HWUI
-HWUI_COMPILE_FOR_PERF := true
+#HWUI_COMPILE_FOR_PERF := true
 
 # Exclude serif fonts for saving system.img size.
 #EXCLUDE_SERIF_FONTS := true
