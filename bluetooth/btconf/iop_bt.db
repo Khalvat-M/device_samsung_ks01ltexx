@@ -1,4 +1,3 @@
-#version=001
 #=====================================================================
 #
 #   :: Bluetooth IOP Database
@@ -66,19 +65,10 @@ EnforceMasterRole KEY_BDADDR="00:50:f2:*" KEY_DIR_ALL="0"
 /* MB China carkit */
 #EnforceMasterRole KEY_BDADDR="00:0e:9f:*" KEY_DIR_ALL="0"
 
-/* iMT525 */
-EnforceMasterRole KEY_BDADDR="00:07:62:*" KEY_DIR_ALL="0"
-
 /* CSR based headsets */
-
-/* Jabra BT 3030 series */
-#EnforceMasterRole KEY_BDADDR="00:1d:82:*" KEY_LMP_MFCT="10" KEY_DIR_ALL="0"
 
 /* Moto H790 */
 #EnforceMasterRole KEY_BDADDR="00:24:1c:*" KEY_LMP_VER="4:5725" KEY_LMP_MFCT="10" KEY_DIR_ALL="0"
-
-/* Microsoft Elite Keyboard */
-#EnforceMasterRole KEY_BDADDR="00:50:f2:*" KEY_DIR_ALL="0"
 
 /* Plantronics Pulsar 590 */
 #EnforceMasterRole KEY_BDADDR="00:19:7f:*" KEY_LMP_MFCT="10" KEY_DIR_ALL="0"
@@ -87,7 +77,8 @@ EnforceMasterRole KEY_BDADDR="00:07:62:*" KEY_DIR_ALL="0"
 #EnforceMasterRole KEY_BDADDR="00:13:17:*" KEY_LMP_MFCT="10" KEY_LMP_VER="2:2361" KEY_DIR_ALL="0"
 
 # Motorola S9-HD
-#EnforceMasterRole KEY_BDADDR="00:0d:fd:*" KEY_LMP_MFCT="10" KEY_LMP_VER="4:5363" KEY_DIR_ALL="0"
+#EnforceMasterRole KEY_BDADDR="00:0d:fd:*" KEY_LMP_MFCT="10" KEY_LMP_VER="4:5363"
+#EnforceMasterRole KEY_BDADDR="00:0d:fd:*" KEY_LMP_MFCT="10" KEY_LMP_VER="3:3728"
 
 # Samsung SBH650 Stereo HS
 #EnforceMasterRole KEY_BDADDR="a0:07:98:*" KEY_LMP_MFCT="10" KEY_LMP_VER="3:4277" KEY_DIR_ALL="0"
@@ -116,6 +107,18 @@ EnforceMasterRole KEY_BDADDR="6c:5d:63:*" KEY_DIR_ALL="0"
 /* WEP470 */
 EnforceMasterRole KEY_BDADDR="00:0d:e6:*"
 
+/* SAMSUNG SBH700 */
+EnforceMasterRole KEY_BDADDR="00:1e:e1:*" KEY_LMP_MFCT="10" KEY_LMP_VER="2:3328"
+
+/* Motorola S805 */
+EnforceMasterRole KEY_BDADDR="00:0c:55:*" KEY_LMP_MFCT="10" KEY_LMP_VER="3:2625"
+EnforceMasterRole KEY_BDADDR="00:1a:0e:*" KEY_LMP_MFCT="10" KEY_LMP_VER="3:2625"
+
+/* Motorola HT820 */
+EnforceMasterRole KEY_BDADDR="00:07:a4:*" KEY_LMP_MFCT="10" KEY_LMP_VER="2:2660"
+
+/* SRS-X10 */
+EnforceMasterRole KEY_BDADDR="b8:69:c2:*"
 #---------------------------------------------------------------------
 # :: Delayed role switch exception
 #
@@ -236,15 +239,6 @@ HidKeybNumLock KEY_HIDKB_PRID="B30B" KEY_HIDKB_VNDID="046D"
 /* Ford Sync Carkit (Device Name: SYNC Mfr:10 (CSR), LMP=3, SUBV=0x0C5C) */
 AvrcKeyReleaseQuirk KEY_NAME="SYNC" KEY_LMP_MFCT="10" KEY_LMP_VER="3:3164"
 
-#---------------------------------------------------------------------
-# :: Initiate Av connect even when sdp fails
-#
-#    AVAILABLE KEYS :
-#
-#      KEY_BDADDR
-
-AvConnectOnSdpFail KEY_BDADDR="00:1e:3d:*"
-AvConnectOnSdpFail KEY_BDADDR="00:1b:fb:*"
 
 #---------------------------------------------------------------------
 # :: enforce open AVDTP sig CH if the HF doesn't open it
@@ -363,7 +357,20 @@ ProcessAvrcKey KEY_BDADDR="38:c0:96:*"
 ProcessAvrcKey KEY_BDADDR="00:23:3d:*"
 /* CADILLAC CUE */
 ProcessAvrcKey KEY_BDADDR="04:98:f3:*"
-
+/* FIAT VP4 (Chrysler) */
+ProcessAvrcKey KEY_BDADDR="30:14:4a:*"
+/* Volkswagen Touareg */
+ProcessAvrcKey KEY_BDADDR="9c:df:03:*"
+/* Seat BT AC */
+ProcessAvrcKey KEY_BDADDR="e0:75:0a:*"
+/* My Car (Nissan) */
+ProcessAvrcKey KEY_BDADDR="00:09:93:*"
+/*  FIAT VP2 (Uconnect) */
+ProcessAvrcKey KEY_BDADDR="9c:28:bf:*"
+/* Audi02 */
+ProcessAvrcKey KEY_BDADDR="ac:7a:4d:*"
+/* MY10 Mitsu MDG(Hands Free System)*/
+ProcessAvrcKey KEY_BDADDR="51:30:26:*"
 #---------------------------------------------------------------------
 # :: Wait before sending call end indication +CIEV:1,0.
 #
@@ -379,6 +386,10 @@ WaitBeforeCiev KEY_BDADDR="00:0e:9f:*"
 WaitBeforeCiev KEY_BDADDR="00:23:3d:*"
 /* Volkswagen GTi BT 4196 */
 WaitBeforeCiev KEY_BDADDR="e0:75:0a:*"
+/* Toyota Prius*/
+WaitBeforeCiev KEY_BDADDR="9c:df:03:*"
+/* Volvo 2013 S80 My Volvo Car */
+WaitBeforeCiev KEY_BDADDR="34:c7:31:*"
 
 /* RD45 car kit */
 NoDelayCIEVRINGinCarkit KEY_BDADDR="00:54:af:*"
@@ -469,3 +480,148 @@ AvChangeAvrcpVersion KEY_BDADDR="00:09:93:*"
 RejectEScoConnReq KEY_BDADDR="00:0d:fd:*"
 /* PLT_K100 */
 RejectEScoConnReq KEY_BDADDR="00:23:7f:*"
+
+#----------------------------------------------------------------------
+#   :: Enforce slave role
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+#         KEY_LMP_VER    : LMP version & subversion
+#         KEY_LMP_MFCT   : Manufacturer
+#         KEY_DIR_ALL    : 0 to apply only for incoming connections
+#                          1 to allow for all directions (default if key not present)
+#
+
+/* Bose */
+EnforceSlaveRole KEY_BDADDR="00:0c:8a:*" KEY_DIR_ALL="0"
+/* BMW_ULF */
+EnforceSlaveRole KEY_BDADDR="00:09:93:*" KEY_DIR_ALL="0"
+/* Tenqa */
+EnforceSlaveRole KEY_BDADDR="00:23:01:*" KEY_DIR_ALL="0"
+/* Savox */
+EnforceSlaveRole KEY_BDADDR="00:15:be:*" KEY_DIR_ALL="0"
+
+#----------------------------------------------------------------------
+#   :: Disable slave role
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* BlueMe */
+DisableSniff KEY_BDADDR="a9:b1:c8:*"
+/* BlueMe */
+DisableSniff KEY_BDADDR="00:14:09:*"
+/* PCM */
+DisableSniff KEY_BDADDR="00:0e:9f:*"
+/* NISSAN */
+#DisableSniff KEY_BDADDR="38:c0:96:*"
+
+#----------------------------------------------------------------------
+#   :: Extend sniff time
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* MBBluetooth NTG3.0 */
+ExtendSniffTime KEY_BDADDR="00:13:1e:*"
+/* KIA Carkit */
+#ExtendSniffTime KEY_BDADDR="00:1e:b2:*"
+/* AUDI */
+#ExtendSniffTime KEY_BDADDR="00:1e:43:*"
+
+#----------------------------------------------------------------------
+#   :: Skip disable sniff policy
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* Samsung BKB A1 */
+SkipDisableSniff KEY_BDADDR="00:19:01:*"
+/* Samsung BKB A2 */
+SkipDisableSniff KEY_BDADDR="20:73:0d:*"
+/* Samsung BKB 10 */
+SkipDisableSniff KEY_BDADDR="90:7f:61:*"
+
+#----------------------------------------------------------------------
+#   :: Don't care ESCO Retransmission
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* Plantronics E240 */
+EscoRetransDontcare KEY_BDADDR="00:23:7f:*"
+
+#----------------------------------------------------------------------
+#   :: Skip Send Sdp Info request
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* PRC ECO2 */
+SkipSdpInfo KEY_BDADDR="00:07:80:*"
+
+
+#---------------------------------------------------------------------
+# :: to add media_feeding_state.pcm.counter
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+
+/* Toyota on Docomo */
+/* CAR MULTIMEDIA_11MOP */
+CheckAvCorrection KEY_BDADDR="00:06:f7:*"
+
+#----------------------------------------------------------------------
+#   :: Exception to avoid sending +CIEV: 2,3 on call alerting
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* 2014 Chrysler Town & Country (New Jersey) */
+AvoidAlertingCarkit KEY_BDADDR="e0:75:0a:*"
+/* Chrysler LLC: PLC 0 (Dallas) */
+AvoidAlertingCarkit KEY_BDADDR="04:76:6e:*"
+/* Toyota Sienna (Dallas) */
+AvoidAlertingCarkit KEY_BDADDR="64:d4:bd:*"
+
+#----------------------------------------------------------------------
+#   :: Exception to timeout while SLC 
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* JB LAB Carkit */
+ExceptSLCTimeout KEY_BDADDR="00:0D:18:*"
+
+#----------------------------------------------------------------------
+#   :: Exception to allow sniff mode while sco connection
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_DID_VND_ID     : Remote vendor id
+#         KEY_START_PROD_ID  : Range of Remote product id (start)
+#         KEY_END_PROD_ID    : Range of Remote product id (end)
+
+/* Level U (VID 117, PID 40976~40991) */
+AllowedScoSniffMode KEY_DID_VND_ID="117" KEY_START_PROD_ID="42241" KEY_END_PROD_ID="42250"
+/* Gear (VID 117, PID 42241~42250) */
+AllowedScoSniffMode KEY_DID_VND_ID="117" KEY_START_PROD_ID="40976" KEY_END_PROD_ID="40991"
+
+#----------------------------------------------------------------------
+#   :: Exception to avoid In-band Ringtone
+#
+#      AVAILABLE KEYS :
+#
+#         KEY_BDADDR     : Remote bd address
+
+/* None */
+AvoidInBandRingtone KEY_BDADDR="FF:FF:FF:*"
