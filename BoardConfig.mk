@@ -13,8 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common msm8974
--include device/samsung/msm8974-common/BoardConfigCommon.mk
+# inherit from qcom-common
+-include device/samsung/qcom-common/BoardConfigCommon.mk
+
+# Platform
+TARGET_BOARD_PLATFORM := msm8974
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
 DEVICE_PATH := device/samsung/ks01ltexx
 
@@ -23,6 +27,7 @@ TARGET_OTA_ASSERT_DEVICE := ks01lte,ks01ltexx,GT-I9506
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Architecture
+TARGET_CPU_VARIANT := krait
 TARGET_CPU_SMP := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
@@ -50,12 +55,54 @@ TARGET_USE_SDCLANG := true
 MALLOC_SVELTE := true
 
 # Audio
+AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
+AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
+AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
+AUDIO_FEATURE_ENABLED_FLUENCE := true
+AUDIO_FEATURE_ENABLED_HFP := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
+
 # Bluetooth
+BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_ks01ltexx.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
+
+# Camera
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+
+# Charger
+BOARD_BATTERY_DEVICE_NAME := "battery"
+BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
+BOARD_CHARGING_CMDLINE_VALUE := "true"
+WITH_LINEAGE_CHARGER := false
+
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= false
+    WITH_DEXPREOPT := true
+  endif
+endif
+
+# Display
+OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
+
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Encryption
 TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
@@ -63,8 +110,12 @@ TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := sdfat
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Legacy BLOB Support
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
@@ -110,7 +161,17 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm8974
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8974
+
+# Netd
+TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
+
 # Power HAL
+TARGET_HAS_LEGACY_POWER_STATS := true
+TARGET_HAS_NO_WLAN_STATS := true
+TARGET_USES_INTERACTION_BOOST := true
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(DEVICE_PATH)/power/power_ext.c
 TARGET_POWERHAL_VARIANT := qcom
 
@@ -124,15 +185,20 @@ ifeq ($(WITH_TWRP),true)
 endif
 
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_DEVICE_DIRS += device/samsung/ks01ltexx
 
 # SELinux
-include $(DEVICE_PATH)/sepolicy/sepolicy.mk
-
+include device/qcom/sepolicy-legacy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+    
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # System Server
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
@@ -151,3 +217,6 @@ WIFI_DRIVER_FW_PATH_AP      := "/vendor/etc/wifi/bcmdhd_apsta.bin"
 
 # inherit from the proprietary version
 -include vendor/samsung/ks01ltexx/BoardConfigVendor.mk
+
+# inherit from the proprietary version
+-include vendor/samsung/msm8974-common/BoardConfigVendor.mk

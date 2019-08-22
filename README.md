@@ -1,6 +1,3 @@
-Copyright 2017-2019 - The LineageOS Project
-Copyright 2015-2016 - The CyanogenMod Project
-
 # Device configuration for Samsung Galaxy S4 LTE-A
 ## Unified variants: GT-I9506/ks01lte, SHV-E330S
 

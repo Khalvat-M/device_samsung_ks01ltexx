@@ -60,7 +60,6 @@ on fs
     # Adaptive LMK
     #write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     #write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
-    #write /sys/module/lowmemorykiller/parameters/minfree "17432,22040,26648,31256,53059,79640"
 
 on post-fs
     # for controlling write performance boosting
