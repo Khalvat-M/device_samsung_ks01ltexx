@@ -179,13 +179,20 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_PROVIDES_LIBRIL := true
 TARGET_RIL_VARIANT := caf
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_DEVICE_DIRS += device/samsung/ks01ltexx
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+BOARD_USES_MMCUTILS := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_RECOVERY_SWIPE := true
+
 # TWRP Support - Optional
 ifeq ($(WITH_TWRP),true)
 -include $(DEVICE_PATH)/twrp.mk
 endif
-
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
-TARGET_RECOVERY_DEVICE_DIRS += device/samsung/ks01ltexx
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
