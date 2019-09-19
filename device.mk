@@ -141,7 +141,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8974 \
     hwcomposer.msm8974 \
     memtrack.msm8974 \
-    libboringssl-compat \
     liboverlay
 
 # Doze
