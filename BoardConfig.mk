@@ -185,7 +185,6 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
-TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
