@@ -19,7 +19,7 @@
 # Inherit some common HavocOS stuff.
 $(call inherit-product, vendor/havoc/config/common.mk)
 
-$(call inherit-product, device/samsung/ks01ltexx/full_ks01ltexx.mk)
+$(call inherit-product, $(LOCAL_PATH)/full_ks01ltexx.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := havoc_ks01ltexx
