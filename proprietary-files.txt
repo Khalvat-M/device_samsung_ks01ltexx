@@ -30,8 +30,6 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # Bluetooth firmware
 vendor/firmware/bcm4335B0_V0343.0358.hcd
-vvendor/lib/libbt-aptx-4.0.3.so
-vendor/lib/libbt-codec_aptx.so
 
 # Camera chromatix
 etc/C13QL_s5k3l2xx_module_info.xml:vendor/etc/C13QL_s5k3l2xx_module_info.xml
@@ -449,9 +447,6 @@ etc/wifi/nvram_net.txt_semco3rd:vendor/etc/wifi/nvram_net.txt_semco3rd
 etc/wifi/nvram_net.txt_semcosh:vendor/etc/wifi/nvram_net.txt_semcosh
 etc/wifi/nvram_mfg.txt_wisol:vendor/etc/wifi/nvram_mfg.txt_wisol
 etc/wifi/nvram_net.txt_wisol:vendor/etc/wifi/nvram_net.txt_wisol
-vendor/lib/libQWiFiSoftApCfg.so
-vendor/lib/libwifi-service.so
-vendor/lib/libebt_802_3.so
 
 #  COMMON PROPRIETARY START FROM HERE
 
