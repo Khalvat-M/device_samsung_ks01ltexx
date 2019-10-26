@@ -17,7 +17,7 @@
 
 
 # Inherit some common HavocOS stuff.
-$(call inherit-product, vendor/havoc/config/common.mk)
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 $(call inherit-product, $(LOCAL_PATH)/full_ks01ltexx.mk)
 
