@@ -151,6 +151,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_ROOT_EXTRA_FOLDERS := firmware firmware-modem efs
+BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
 
 # Optimizations
 #ENABLE_SCHEDBOOST := true
