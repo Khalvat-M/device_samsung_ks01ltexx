@@ -76,7 +76,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.netmgrd.qos.enable=false \
+    persist.data.netmgrd.qos.enable=true \
     persist.data.qmi.adb_logmask=0 \
     persist.qcril.disable_retry=true \
     rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
@@ -85,6 +85,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=9 \
     ro.telephony.call_ring.multiple=0 \
     persist.telephony.oosisdc=false \
     ril.subscription.types=NV,RUIM \
