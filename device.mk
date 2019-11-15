@@ -19,6 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/ks01ltexx/ks01ltexx-vendor.mk)
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
