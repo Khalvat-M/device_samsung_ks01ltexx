@@ -171,7 +171,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
 TARGET_USES_MKE2FS := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8974
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_msm8974
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8974
 
 # Netd
