@@ -14,9 +14,13 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_ks01ltexx.mk
+    $(LOCAL_DIR)/havoc_ks01ltexx.mk \
+    $(LOCAL_DIR)/lineage_ks01ltexx.mk
 
 COMMON_LUNCH_CHOICES := \
     havoc_ks01ltexx-user \
     havoc_ks01ltexx-userdebug \
-    havoc_ks01ltexx-eng
+    havoc_ks01ltexx-eng \
+    lineage_ks01ltexx-user \
+    lineage_ks01ltexx-userdebug \
+    lineage_ks01ltexx-eng
