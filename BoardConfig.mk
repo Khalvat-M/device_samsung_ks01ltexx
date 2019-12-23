@@ -169,6 +169,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
+# Includes
+TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_msm8974
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8974
