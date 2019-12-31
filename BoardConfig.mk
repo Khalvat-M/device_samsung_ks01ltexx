@@ -181,6 +181,9 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
+
 # TWRP Support - Optional
 ifeq ($(WITH_TWRP),true)
 -include $(DEVICE_PATH)/twrp.mk
