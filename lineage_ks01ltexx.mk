@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2014-2016 The CyanogenMod Project
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,11 +23,3 @@ $(call inherit-product, $(LOCAL_PATH)/full_ks01ltexx.mk)
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_ks01ltexx
 PRODUCT_DEVICE := ks01ltexx
-PRODUCT_MODEL := GT-I9506
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=ks01ltexx \
-    PRODUCT_DEVICE=ks01lte \
-    PRIVATE_BUILD_DESC="ks01ltexx-user 5.0.1 LRX22C I9506XXUDRB1 release-keys"
-
-BUILD_FINGERPRINT := samsung/ks01ltexx/ks01lte:5.0.1/LRX22C/I9506XXUDRB1:user/release-keys
