@@ -92,6 +92,26 @@ void vendor_load_properties()
         }
         property_override("ro.build.description", "ks01ltexx-user 5.0.1 LRX22C I9506XXUDRB1 release-keys");
         property_override("ro.build.product", "ks01ltexx");
+    } else if (bootloader.find("E330S") == 0) {
+        /* ks01lteskt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/ks01lteskt/ks01lte:5.0.1/LRX22C/E330SKSUDPI2:user/release-keys");
+            set_ro_product_prop(source, "device", "ks01lteskt");
+            set_ro_product_prop(source, "model", "SHV-E330S");
+            set_ro_product_prop(source, "name", "ks01lteskt");
+        }
+        property_override("ro.build.description", "ks01lteskt-user 5.0.1 LRX22C E300SKSUDPI2 release-keys");
+        property_override("ro.build.product", "ks01lteskt");
+    } else if (bootloader.find("E330K") == 0) {
+        /* ks01ltesktt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/ks01ltesktt/ks01lte:5.0.1/LRX22C/E330KKKUDPH1:user/release-keys");
+            set_ro_product_prop(source, "device", "ks01ltesktt");
+            set_ro_product_prop(source, "model", "SHV-E330K");
+            set_ro_product_prop(source, "name", "ks01ltesktt");
+        }
+        property_override("ro.build.description", "ks01ltesktt-user 5.0.1 LRX22C E330KKKUDPH1 release-keys");
+        property_override("ro.build.product", "ks01ltesktt");
     }
 
     const std::string device = GetProperty("ro.product.device", "");

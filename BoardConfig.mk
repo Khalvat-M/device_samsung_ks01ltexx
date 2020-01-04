@@ -23,7 +23,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
 DEVICE_PATH := device/samsung/ks01ltexx
 
-TARGET_OTA_ASSERT_DEVICE := ks01lte,ks01ltexx,GT-I9506
+TARGET_OTA_ASSERT_DEVICE := ks01lte,ks01ltexx,ks01lteskt,ks01ltesktt,GT-I9506
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
