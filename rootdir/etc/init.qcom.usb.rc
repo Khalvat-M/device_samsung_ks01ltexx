@@ -1,4 +1,4 @@
-# Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The LineageOS. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -48,6 +48,7 @@ on fs
     write /sys/class/android_usb/android0/f_ffs/aliases adb
 
     setprop sys.usb.ffs.aio_compat 1
+    setprop sys.usb.mtp.device_type 2
     setprop persist.adb.nonblocking_ffs 0
     setprop ro.adb.nonblocking_ffs 0
 
