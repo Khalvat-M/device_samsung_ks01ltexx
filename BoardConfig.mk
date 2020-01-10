@@ -53,6 +53,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 # Use Snapdragon LLVM if available on build server
 TARGET_USE_SDCLANG := true
 
+# Encryption
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Enable SVELTE memory configuration
 MALLOC_SVELTE := true
 
