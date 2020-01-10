@@ -157,6 +157,9 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
+# Dex
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
