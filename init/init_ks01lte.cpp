@@ -103,15 +103,25 @@ void vendor_load_properties()
         property_override("ro.build.description", "ks01lteskt-user 5.0.1 LRX22C E300SKSUDPI2 release-keys");
         property_override("ro.build.product", "ks01lteskt");
     } else if (bootloader.find("E330K") == 0) {
-        /* ks01ltesktt */
+        /* ks01ltektt */
         for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/ks01ltesktt/ks01lte:5.0.1/LRX22C/E330KKKUDPH1:user/release-keys");
-            set_ro_product_prop(source, "device", "ks01ltesktt");
+            set_ro_product_prop(source, "fingerprint", "samsung/ks01ltektt/ks01lte:5.0.1/LRX22C/E330KKKUDPH1:user/release-keys");
+            set_ro_product_prop(source, "device", "ks01ltektt");
             set_ro_product_prop(source, "model", "SHV-E330K");
-            set_ro_product_prop(source, "name", "ks01ltesktt");
+            set_ro_product_prop(source, "name", "ks01ltektt");
         }
-        property_override("ro.build.description", "ks01ltesktt-user 5.0.1 LRX22C E330KKKUDPH1 release-keys");
-        property_override("ro.build.product", "ks01ltesktt");
+        property_override("ro.build.description", "ks01ltektt-user 5.0.1 LRX22C E330KKKUDPH1 release-keys");
+        property_override("ro.build.product", "ks01ltektt");
+    } else if (bootloader.find("E330L") == 0) {
+        /* ks01ltelgt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/ks01ltelgt/ks01lte:5.0.1/LRX22C/E330LKLUDPH4:user/release-keys");
+            set_ro_product_prop(source, "device", "ks01ltelgt");
+            set_ro_product_prop(source, "model", "SHV-E330L");
+            set_ro_product_prop(source, "name", "ks01ltelgt");
+        }
+        property_override("ro.build.description", "ks01ltelgt-user 5.0.1 LRX22C E330LKLUDPH4 release-keys");
+        property_override("ro.build.product", "ks01ltelgt");
     }
 
     const std::string device = GetProperty("ro.product.device", "");
