@@ -30,7 +30,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Architecture
 TARGET_CPU_VARIANT := generic
-TARGET_CPU_SMP := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_CPU_VARIANT_RUNTIME := krait
 
@@ -101,9 +100,9 @@ endif
 # Display
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x02000000U
-
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
+
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := sdfat
 
@@ -143,20 +142,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_ROOT_EXTRA_FOLDERS := firmware firmware-modem efs
 BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
-
-# Optimizations
-#ENABLE_SCHEDBOOST := true
-
-#BOARD_CHARGER_DISABLE_INIT_BLANK := true
-#TARGET_COMPILE_WITH_MSM_KERNEL := true
-# Generic AOSP image does NOT support HWC1
-#TARGET_USES_HWC2 := true
-
-# HWUI
-#HWUI_COMPILE_FOR_PERF := true
-
-# Exclude serif fonts for saving system.img size.
-#EXCLUDE_SERIF_FONTS := true
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
