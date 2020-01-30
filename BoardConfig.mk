@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # inherit from qcom-common
--include device/samsung/qcom-common/BoardConfigCommon.mk
+include device/samsung/qcom-common/BoardConfigCommon.mk
 
 BUILD_FINGERPRINT := samsung/ks01ltexx/ks01lte:5.0.1/LRX22C/I9506XXUDRB1:user/release-keys
 
