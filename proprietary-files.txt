@@ -336,9 +336,6 @@ bin/irsc_util:vendor/bin/irsc_util
 # IPv6 Tethering
 bin/radish:vendor/bin/radish
 
-# IR
-lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.msm8974.so
-
 # Media
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAmrwbplusDec.so
