@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2012 The Android Open Source Project
- * Copyright (C) 2012 The CyanogenMod Project <http://www.cyanogenmod.org>
+ * Copyright (C) 2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,10 @@
 #define BTM_DEF_LOCAL_NAME   "Galaxy S4 LTE-A"
 
 #define BTA_DISABLE_DELAY 100 /* in milliseconds */
-#define BTM_SCO_ENHANCED_SYNC_ENABLED FALSE
-#define BTM_WBS_INCLUDED TRUE
-#define BTIF_HF_WBS_PREFERRED TRUE
-#define BLE_VND_INCLUDED TRUE
+#define SC_MODE_INCLUDED FALSE
+#define SDP_DEBUG FALSE
+#define BTSNOOP_MEM FALSE
+#define BTM_WBS_INCLUDED TRUE /* Enable WBS */
+#define BTIF_HF_WBS_PREFERRED FALSE /* Do not prefer WBS */
 
 #endif
