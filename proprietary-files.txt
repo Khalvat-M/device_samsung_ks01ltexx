@@ -470,7 +470,7 @@ vendor/lib/libscale.so|b44f44c633fa404d10e76aaa23593b516e08e2b8
 vendor/firmware/a330_pfp.fw|3e2fcee7276ded819cf2d95864fdd6788a484ee1
 vendor/firmware/a330_pm4.fw|ae739ea812f9e4462d7bba8b9ead5782d4496618
 
-# GPS (Updated from onyx)
+# GPS (from FP2 N Fairphone/FP2/FP2:7.1.2/19.08.1/gms-fad0fe00)
 bin/loc_launcher:vendor/bin/loc_launcher
 lib/libloc_api_v02.so:vendor/lib/libloc_api_v02.so
 lib/libloc_ds_api.so:vendor/lib/libloc_ds_api.so
