@@ -255,7 +255,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libsecnativefeature \
     libcnefeatureconfig \
-    libril-wrapper \
     librmnetctl \
     libxml2
 
