@@ -354,7 +354,7 @@ vendor/lib/libdisp-aba.so
 -vendor/lib/libmm-abl.so
 vendor/lib/libmm-abl-oem.so
 
-# Qualcomm framework (from FP2 N Fairphone/FP2/FP2:7.1.2/19.08.1/gms-fad0fe00)
+# Qualcomm framework (from Bacon Marshmallowlatest blobs)
 bin/irsc_util:vendor/bin/irsc_util
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
@@ -374,12 +374,15 @@ vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
 
-# Radio from (from FP2 N Fairphone/FP2/FP2:7.1.2/19.08.1/gms-fad0fe00)
+
+# Radio (from Fairphone/FP2/FP2:7.1.2/19.08.1/gms-fad0fe00:user/release-keys)
+bin/rmt_storage:vendor/bin/rmt_storage
+
+# Radio (from Bacon Marshmallowlatest blobs)
 -app/shutdownlistener/shutdownlistener.apk:vendor/app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd:vendor/bin/netmgrd
 bin/qmuxd:vendor/bin/qmuxd
 bin/rfs_access:vendor/bin/rfs_access
-bin/rmt_storage:vendor/bin/rmt_storage
 etc/data/dsi_config.xml:vendor/etc/data/dsi_config.xml
 etc/data/netmgr_config.xml:vendor/etc/data/netmgr_config.xml
 etc/permissions/qcnvitems.xml:vendor/etc/permissions/qcnvitems.xml
@@ -394,7 +397,6 @@ vendor/lib/libconfigdb.so
 vendor/lib/liblqe.so
 vendor/lib/libnetmgr.so
 vendor/lib/libperipheral_client.so
-vendor/lib/libril-qc-radioconfig.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libxml.so
