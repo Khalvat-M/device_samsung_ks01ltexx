@@ -374,12 +374,8 @@ vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
 
-
-# Radio (from Fairphone/FP2/FP2:7.1.2/19.08.1/gms-fad0fe00:user/release-keys)
+# Radio (from Bacon LL blobs)
 bin/rmt_storage:vendor/bin/rmt_storage
-
-# Radio (from Bacon Marshmallowlatest blobs)
--app/shutdownlistener/shutdownlistener.apk:vendor/app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd:vendor/bin/netmgrd
 bin/qmuxd:vendor/bin/qmuxd
 bin/rfs_access:vendor/bin/rfs_access
@@ -394,7 +390,6 @@ lib/libmdmdetect.so:vendor/lib/libmdmdetect.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/lib/libcneapiclient.so
 vendor/lib/libconfigdb.so
-vendor/lib/liblqe.so
 vendor/lib/libnetmgr.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libril-qc-qmi-1.so
