@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from qcom-common
-include device/samsung/qcom-common/BoardConfigCommon.mk
-
 BUILD_FINGERPRINT := samsung/ks01ltexx/ks01lte:5.0.1/LRX22C/I9506XXUDRB1:user/release-keys
 
 # Platform
@@ -28,11 +25,16 @@ TARGET_OTA_ASSERT_DEVICE := ks01lte,ks01ltexx,GT-I9506,ks01lteskt,ks01ltektt,ks0
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Architecture
+TARGET_ARCH := arm
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := generic
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_CPU_VARIANT_RUNTIME := krait
 
 # Bootloader
+TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 BOARD_VENDOR := samsung
 
@@ -100,6 +102,8 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x02000000U
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
@@ -126,6 +130,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/rild=27
 
 
+# LineageHW
+BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
+
 # NFC
 include $(DEVICE_PATH)/nfc/bcm2079x/board.mk
 
@@ -141,6 +148,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_ROOT_EXTRA_FOLDERS := firmware firmware-modem efs
 BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
+
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
@@ -162,6 +172,8 @@ TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(DEVICE_PATH)/power/power_ext.c
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_DEVICE_DIRS += device/samsung/ks01ltexx
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
