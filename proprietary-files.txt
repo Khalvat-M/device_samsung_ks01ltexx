@@ -33,6 +33,8 @@ vendor/bin/hci_qcomm_init
 vendor/firmware/bcm4335B0_V0343.0358.hcd
 vendor/firmware/bcm4335_prepatch.hcd
 vendor/lib/libbtnv.so
+vendor/lib/libaptX_encoder.so
+vendor/lib/libaptXHD_encoder.so
 
 # Camera chromatix
 etc/C13QL_s5k3l2xx_module_info.xml:vendor/etc/C13QL_s5k3l2xx_module_info.xml
@@ -442,9 +444,6 @@ etc/wifi/nvram_mfg.txt_wisol:vendor/etc/wifi/nvram_mfg.txt_wisol
 etc/wifi/nvram_net.txt_wisol:vendor/etc/wifi/nvram_net.txt_wisol
 
 #  COMMON PROPRIETARY START FROM HERE
-
-# aptX (Moto griffin - NCLS25.86-11-4-6-5)
-vendor/lib/libaptX_encoder.so|b03772672144d4b750a5672c2922aded93bb0512
 
 # Graphics (OnePlus onyx - Oxygen OS 3.1.4 - OnePlusXOxygen_14_201611071506)
 vendor/lib/egl/eglsubAndroid.so|b8a5790c5b4ba4cf0018c94066104610c821ed8e
