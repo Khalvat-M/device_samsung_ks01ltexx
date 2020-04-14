@@ -68,6 +68,10 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
+    # for WIFI TRP/TIS
+    chown system root /data/.psm.info
+    chmod 0664 /data/.psm.info
+    
     # for WIFI Version
     write /data/.wifiver.info 0
     chown system root /data/.wifiver.info
@@ -213,6 +217,9 @@ on early-boot
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
+    #For bridgemgr daemon to inform the USB driver of the correct transport
+    chown radio radio /sys/class/android_usb/f_rmnet_smd_sdio/transport
+    
     # create symlink for fb1 as HDMI
     symlink /dev/graphics/fb1 /dev/graphics/hdmi
 
@@ -532,6 +539,7 @@ on early-boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /proc/bluetooth/sleep/proto
     chmod 0660 /proc/bluetooth/sleep/proto
+    chown system system /sys/module/sco/parameters/disable_esco
 
     # DualWave
     chown system system /sys/kernel/DualWave/sound/DUALWAVE_CONFIG

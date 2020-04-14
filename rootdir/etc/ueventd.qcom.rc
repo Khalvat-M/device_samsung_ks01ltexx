@@ -111,6 +111,7 @@
 /dev/voice_svc            0660   system     audio
 /dev/snd/pcmC0D0p         0660   system     audio
 /dev/snd/pcmC0D12p        0660   system     audio
+/dev/avtimer              0660   system     audio
 /dev/snd/pcmC0D2c         0660   media      media
 /dev/i2c-5                0660   media      media
 /dev/smd3                 0660   bluetooth  bluetooth
@@ -147,8 +148,17 @@
 #permission for dun
 /dev/dun               0660   system     system
 
+# Kmsg device
+/dev/kmsg              0620   root       system
+
 # EFS
 /dev/block/mmcblk0p11  0660   system     system
+
+# Ramdump devices
+/dev/ramdump*          0640   system     system
+
+# SSR devices
+/dev/subsys_*          0640   system     system
 
 # sysfs properties
 /sys/devices/virtual/input/input*      enable      0660  root   input
