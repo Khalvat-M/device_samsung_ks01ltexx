@@ -129,10 +129,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/mm-qcamera-daemon=22 \
     /system/vendor/bin/hw/rild=27
 
-
-# LineageHW
-BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
-
 # NFC
 include $(DEVICE_PATH)/nfc/bcm2079x/board.mk
 
