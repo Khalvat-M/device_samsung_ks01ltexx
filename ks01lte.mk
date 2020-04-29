@@ -285,6 +285,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
+# Shipping API level
+PRODUCT_SHIPPING_API_LEVEL := 18
 
 # Telephony
 PRODUCT_PACKAGES += \
