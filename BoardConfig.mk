@@ -118,7 +118,6 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Legacy BLOB Support
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so \
     /system/vendor/lib/libperipheral_client.so|libshim_binder.so
