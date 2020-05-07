@@ -1,3 +1,5 @@
+Copyright 2020 - The Khalvat-M Project
+
 # Device configuration for Samsung Galaxy S4 LTE-A
 ## Unified variants: GT-I9506 , SHV-E330S , SHV-E330K , SHV-E330L
 
@@ -18,5 +20,34 @@ Rear Camera  | 13 MP, f/2.2, 31mm, OIS, autofocus, LED flash
 Front Camera | 2 MP, f/2.4, 27mm (wide), Dual video call
 Release Date | November 2013
 
-![Galaxy S4 LTE-A](http://xphone24.com/foto/samsung_galaxy_s4_lte+.png "Galaxy S4 LTE-A")
+![Galaxy S4 LTE-A](https://github.com/Khalvat-M/android_device_samsung_ks01ltexx/blob/10.0/information/ks01lte.gif)
 
+# For building Android Q
+### create .repo/local_manifests/roomservice.xml with the following content:
+
+***
+ 
+        <?xml version="1.0" encoding="UTF-8"?>
+           <manifest>
+        
+           <remote  name="khalvat"
+              fetch="https://github.com/Khalvat-M"
+              revision="10.0" />
+
+           <remote  name="linos"
+              fetch="https://github.com/LineageOS"
+              revision="lineage-17.1" />
+
+              <!--LineageOS -->
+              <project name="android_hardware_samsung" path="hardware/samsung" remote="linos" />
+        
+              <!--Device -->
+              <project name="android_device_samsung_ks01ltexx" path="device/samsung/ks01ltexx" remote="khalvat" />
+           
+              <!--Kernel -->
+              <project name="kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="khalvat" />
+    
+              <!--Vendor -->
+              <project name="vendor_samsung" path="vendor/samsung" remote="khalvat" />
+                  
+           </manifest>
