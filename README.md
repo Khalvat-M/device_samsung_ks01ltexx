@@ -23,7 +23,7 @@ Release Date | November 2013
 ![Galaxy S4 LTE-A](https://github.com/Khalvat-M/android_device_samsung_ks01ltexx/blob/10.0/information/ks01lte.gif)
 
 # For building Android Q
-### create .repo/local_manifests/roomservice.xml with the following content:
+### Create `.repo/local_manifests/roomservice.xml` with the following content:
 
 ***
  
