@@ -291,7 +291,6 @@ PRODUCT_SHIPPING_API_LEVEL := 18
 
 # Telephony
 PRODUCT_PACKAGES += \
-    qti-telephony-common \
     telephony-ext \
     telephony-common \
     qti-telephony-hidl-wrapper \
@@ -300,9 +299,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     ims-ext-common \
     ims_ext_common.xml
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
 
 # Thermal
 PRODUCT_COPY_FILES += \
