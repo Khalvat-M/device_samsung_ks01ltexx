@@ -27,7 +27,6 @@ type app_efs_file, file_type;
 type carrier_efs_file, file_type;
 type drm_efs_file, file_type;
 type imei_efs_file, file_type;
-type sensors_efs_file, file_type;
+type sensor_efs_file, file_type;
 
-type sensors_efs_file, file_type;
 type vendor_sensor_lib_file, vendor_file_type, file_type;
