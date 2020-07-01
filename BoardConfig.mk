@@ -123,7 +123,8 @@ PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 # Legacy BLOB Support
 TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so \
-    /system/vendor/lib/libperipheral_client.so|libshim_binder.so
+    /system/vendor/lib/libperipheral_client.so|libshim_binder.so \
+    /system/vendor/lib/libril-qc-qmi-1.so|libaudioclient_shim.so
 
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
