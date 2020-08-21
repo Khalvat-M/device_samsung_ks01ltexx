@@ -334,6 +334,7 @@ PRODUCT_PACKAGES += \
     libnetcmdiface \
     libwpa_client \
     macloader \
+    TetheringConfigOverlay \
     wificond \
     WifiOverlay \
     wpa_supplicant \
