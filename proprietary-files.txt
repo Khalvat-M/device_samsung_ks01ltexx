@@ -129,24 +129,6 @@ lib/D13QS_libTsAe.so:vendor/lib/D13QS_libTsAe.so
 lib/D13QS_libTsAf.so:vendor/lib/D13QS_libTsAf.so
 lib/D13QS_libTs_J_Accm.so:vendor/lib/D13QS_libTs_J_Accm.so
 lib/D13QS_libTs_J_Awb.so:vendor/lib/D13QS_libTs_J_Awb.so
-lib/libchromatix_imx134_common.so:vendor/lib/libchromatix_imx134_common.so
-lib/libchromatix_imx134_common_720p_b.so:vendor/lib/libchromatix_imx134_common_720p_b.so
-lib/libchromatix_imx134_common_720p_s.so:vendor/lib/libchromatix_imx134_common_720p_s.so
-lib/libchromatix_imx134_common_res0.so:vendor/lib/libchromatix_imx134_common_res0.so
-lib/libchromatix_imx134_common_res1.so:vendor/lib/libchromatix_imx134_common_res1.so
-lib/libchromatix_imx134_common_res2.so:vendor/lib/libchromatix_imx134_common_res2.so
-lib/libchromatix_imx134_common_res3.so:vendor/lib/libchromatix_imx134_common_res3.so
-lib/libchromatix_imx134_default_video.so:vendor/lib/libchromatix_imx134_default_video.so
-lib/libchromatix_imx134_golfshot.so:vendor/lib/libchromatix_imx134_golfshot.so
-lib/libchromatix_imx134_hfr_120.so:vendor/lib/libchromatix_imx134_hfr_120.so
-lib/libchromatix_imx134_hfr_60.so:vendor/lib/libchromatix_imx134_hfr_60.so
-lib/libchromatix_imx134_hfr_720p_b.so:vendor/lib/libchromatix_imx134_hfr_720p_b.so
-lib/libchromatix_imx134_hfr_720p_s.so:vendor/lib/libchromatix_imx134_hfr_720p_s.so
-lib/libchromatix_imx134_liveshot.so:vendor/lib/libchromatix_imx134_liveshot.so
-lib/libchromatix_imx134_pip.so:vendor/lib/libchromatix_imx134_pip.so
-lib/libchromatix_imx134_preview.so:vendor/lib/libchromatix_imx134_preview.so
-lib/libchromatix_imx134_snapshot.so:vendor/lib/libchromatix_imx134_snapshot.so
-lib/libchromatix_imx134_zslshot.so:vendor/lib/libchromatix_imx134_zslshot.so
 lib/libchromatix_imx135_common.so:vendor/lib/libchromatix_imx135_common.so
 lib/libchromatix_imx135_common_1080p_b.so:vendor/lib/libchromatix_imx135_common_1080p_b.so
 lib/libchromatix_imx135_common_1080p_s.so:vendor/lib/libchromatix_imx135_common_1080p_s.so
@@ -203,8 +185,6 @@ vendor/lib/D13QL_libchromatix_s5k3l2xx_vt.so
 vendor/lib/D13QL_libchromatix_s5k3l2xx_vt_hd.so
 vendor/lib/D13QS_libchromatix_imx135_vt.so
 vendor/lib/D13QS_libchromatix_imx135_vt_hd.so
-vendor/lib/libchromatix_imx134_vt.so
-vendor/lib/libchromatix_imx134_vt_hd.so
 vendor/lib/libchromatix_imx135_vt.so
 vendor/lib/libchromatix_imx135_vt_hd.so
 vendor/lib/libchromatix_s5k3l2xx_vt.so
@@ -238,9 +218,7 @@ vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_image_stab.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_imx135.so
-vendor/lib/libmmcamera_imx134.so
 vendor/lib/libmmcamera_mt9m114.so
-vendor/lib/libmmcamera_ov2720.so
 vendor/lib/libmmcamera_s5k3l1yx.so
 vendor/lib/libmmcamera_s5k3l2xx.so
 vendor/lib/libmmcamera_s5k4e5ya.so
@@ -257,60 +235,6 @@ vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/liboemcamera.so
 vendor/lib/libsensor1.so
 
-   
-vendor/lib/libArcPiClear.so
-vendor/lib/libDMCImageMatting.so
-vendor/lib/libImageRoi.so
-vendor/lib/libImmVibeJ.so
-vendor/lib/libQjpeg.so
-vendor/lib/libQmageDecoder.so
-vendor/lib/libSRIBSE_Interface.so
-vendor/lib/libSRIBSE_Lib.so
-vendor/lib/libSRIB_FocusShot.so
-vendor/lib/libarac.so
-vendor/lib/libarccamera.so
-vendor/lib/libarcgif.so
-vendor/lib/libarcpicbest.so
-vendor/lib/libarcplatform.so
-vendor/lib/libarcsoft_flawlessface.so
-vendor/lib/libarcsoft_panorama_burstcapture.so
-vendor/lib/libarcsoft_picaction.so
-vendor/lib/libarcsoft_picaction_manual.so
-vendor/lib/libarcsoft_sensorndk.so
-vendor/lib/libarcsoft_skin_soften.so
-vendor/lib/libcamera_client.so
-vendor/lib/libcamera_metadata.so
-vendor/lib/libcameraservice.so
-vendor/lib/libdmcFaceEngine.so
-vendor/lib/libdmcFaceEngine3GVT.so
-vendor/lib/libdmcFaceEnginePE.so
-vendor/lib/libimg_utils.so
-vendor/lib/libjpeg.so
-vendor/lib/libjpega.so
-vendor/lib/libjpegdhw.so
-vendor/lib/libjpegehw.so
-vendor/lib/libk2ViewerJni.so
-vendor/lib/libmmQSM.so 
-vendor/lib/libmmparser.so
-vendor/lib/libphotoeditorEngine.so
-vendor/lib/libphotoeditorUtil.so
-vendor/lib/libpng.so
-vendor/lib/libqjpeg_secvision.so
-vendor/lib/libqjpegforphotoeditor.so
-vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libseccamera_jni.so
-vendor/lib/libseccameracore.so
-vendor/lib/libseccameraeffect.so
-vendor/lib/libSisoJpegCodec.so
-vendor/lib/libsecjpeginterface.so
-vendor/lib/libsecjpegquram.so
-vendor/lib/lib_bodyfat_v02_jni.so
-vendor/lib/libarcsoft_night_shot.so
-vendor/lib/libarcsoft_nighthawk.so
-vendor/lib/libquramagifencoder.so
-vendor/lib/libquramagifencoderPE.so
-vendor/lib/libquramimagecodec.so
-vendor/lib/libsecjpegquram.so
 
 # Camera firmware
 cameradata/datapattern_420sp.yuv:vendor/cameradata/datapattern_420sp.yuv
@@ -439,8 +363,6 @@ etc/wifi/nvram_net.txt_muratafem1:vendor/etc/wifi/nvram_net.txt_muratafem1
 etc/wifi/nvram_net.txt_muratafem2:vendor/etc/wifi/nvram_net.txt_muratafem2
 etc/wifi/nvram_net.txt_semco3rd:vendor/etc/wifi/nvram_net.txt_semco3rd
 etc/wifi/nvram_net.txt_semcosh:vendor/etc/wifi/nvram_net.txt_semcosh
-etc/wifi/nvram_mfg.txt_wisol:vendor/etc/wifi/nvram_mfg.txt_wisol
-etc/wifi/nvram_net.txt_wisol:vendor/etc/wifi/nvram_net.txt_wisol
 
 #  COMMON PROPRIETARY START FROM HERE
 
