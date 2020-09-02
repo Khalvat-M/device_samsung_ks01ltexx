@@ -289,6 +289,7 @@ PRODUCT_SHIPPING_API_LEVEL := 18
 PRODUCT_PACKAGES += \
     telephony-ext \
     telephony-common \
+    qti-telephony-common \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
