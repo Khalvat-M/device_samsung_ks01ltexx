@@ -125,9 +125,9 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/btconf/auto_pair_devlist.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/auto_pair_devlist.conf \
-    $(LOCAL_PATH)/bluetooth/btconf/iop_device_list.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/iop_device_list.conf \
-    $(LOCAL_PATH)/bluetooth/btconf/iop_bt.db:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/iop_bt.db
+    $(LOCAL_PATH)/bluetooth/btconf/auto_pair_devlist.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/auto_pair_devlist.conf \
+    $(LOCAL_PATH)/bluetooth/btconf/iop_device_list.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/iop_device_list.conf \
+    $(LOCAL_PATH)/bluetooth/btconf/iop_bt.db:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/iop_bt.db
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -195,8 +195,8 @@ PRODUCT_COPY_FILES += \
 
 # Input device
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/sec_touchscreen.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/sec_touchscreen.idc \
-    $(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/Synaptics_HID_TouchPad.idc
+    $(LOCAL_PATH)/idc/sec_touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_touchscreen.idc \
+    $(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Synaptics_HID_TouchPad.idc
 
 # IR Blaster
 PRODUCT_PACKAGES += \
