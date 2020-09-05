@@ -134,6 +134,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
 # NFC
 include $(DEVICE_PATH)/nfc/bcm2079x/board.mk
 
+# Offmode Charging
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/samsung/ks01ltexx/charger/images
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 20971520	  #20mb
