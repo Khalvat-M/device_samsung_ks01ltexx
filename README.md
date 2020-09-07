@@ -40,7 +40,8 @@ Release Date | November 2013
 
               <!--LineageOS -->
               <project name="android_hardware_samsung" path="hardware/samsung" remote="linos" />
-        
+              <project name="android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="linos"/>
+              
               <!--Device -->
               <project name="android_device_samsung_ks01ltexx" path="device/samsung/ks01ltexx" remote="khalvat" />
            
