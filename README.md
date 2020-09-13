@@ -20,9 +20,9 @@ Rear Camera  | 13 MP, f/2.2, 31mm, OIS, autofocus, LED flash
 Front Camera | 2 MP, f/2.4, 27mm (wide), Dual video call
 Release Date | November 2013
 
-![Galaxy S4 LTE-A](https://github.com/Khalvat-M/android_device_samsung_ks01ltexx/blob/10.0/information/ks01lte.gif)
+![Galaxy S4 LTE-A](https://github.com/Khalvat-M/android_device_samsung_ks01ltexx/blob/11.0/information/ks01lte.gif)
 
-# For building Android Q
+# For building Android R
 ### Create `.repo/local_manifests/roomservice.xml` with the following content:
 
 ***
@@ -32,11 +32,11 @@ Release Date | November 2013
         
            <remote  name="khalvat"
               fetch="https://github.com/Khalvat-M"
-              revision="10.0" />
+              revision="11.0" />
 
            <remote  name="linos"
               fetch="https://github.com/LineageOS"
-              revision="lineage-17.1" />
+              revision="lineage-18.0" />
 
               <!--LineageOS -->
               <project name="android_hardware_samsung" path="hardware/samsung" remote="linos" />
