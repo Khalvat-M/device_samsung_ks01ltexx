@@ -130,6 +130,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/mm-qcamera-daemon=22 \
     /system/vendor/bin/hw/rild=27
 
+# memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # NFC
 include $(DEVICE_PATH)/nfc/board.mk
 
