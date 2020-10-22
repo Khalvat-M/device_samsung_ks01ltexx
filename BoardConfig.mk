@@ -131,7 +131,7 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/rild=27
 
 # NFC
-include $(DEVICE_PATH)/nfc/bcm2079x/board.mk
+include $(DEVICE_PATH)/nfc/board.mk
 
 # Offmode Charging
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/samsung/ks01ltexx/charger/images

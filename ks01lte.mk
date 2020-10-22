@@ -369,7 +369,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/samsung/msm8974-common/msm8974-common-vendor.mk)
 
 # NFC
-$(call inherit-product, device/samsung/ks01ltexx/nfc/bcm2079x/product.mk)
+$(call inherit-product, device/samsung/ks01ltexx/nfc/product.mk)
 
 # System Properties
 $(call inherit-product, device/samsung/ks01ltexx/system_prop.mk)
