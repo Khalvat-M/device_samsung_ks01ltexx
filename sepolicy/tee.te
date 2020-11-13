@@ -1,1 +1,0 @@
-allow tee rpmb_device:blk_file ioctl;
