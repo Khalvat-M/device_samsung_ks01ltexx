@@ -15,11 +15,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/ks01ltexx/ks01ltexx-vendor.mk)
-
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
@@ -45,5 +40,8 @@ PRODUCT_COPY_FILES += \
 # NFC
 $(call inherit-product, device/samsung/msm8974-common/nfc/bcm2079x/product.mk)
 
-# common klte
+# Get non-open-source specific aspects
+$(call inherit-product, vendor/samsung/ks01ltexx/ks01ltexx-vendor.mk)
+
+# msm8974-common
 $(call inherit-product, device/samsung/msm8974-common/common.mk)
