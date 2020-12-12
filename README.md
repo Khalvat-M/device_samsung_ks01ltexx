@@ -36,7 +36,7 @@ Release Date | November 2013
 
  <remote  name="linos"
     fetch="https://github.com/LineageOS"
-    revision="lineage-18.0" />
+    revision="lineage-18.1" />
 
     <!--LineageOS -->
     <project name="android_hardware_samsung" path="hardware/samsung" remote="linos" />
