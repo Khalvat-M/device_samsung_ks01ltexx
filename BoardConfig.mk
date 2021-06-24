@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,4 +43,4 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12528352256
 include $(COMMON_PATH)/nfc/bcm2079x/board.mk
 
 # inherit from the proprietary version
--include vendor/samsung/ks01ltexx/BoardConfigVendor.mk
+include vendor/samsung/ks01ltexx/BoardConfigVendor.mk
