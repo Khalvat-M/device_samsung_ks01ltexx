@@ -32,6 +32,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_ks01lte
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_ks01lte_defconfig
 
+# Manifests
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
 # OTA
 TARGET_OTA_ASSERT_DEVICE := ks01lte,ks01ltexx,GT-I9506,ks01lteskt,ks01ltektt,ks01ltelgt
 
@@ -44,3 +47,6 @@ include $(COMMON_PATH)/nfc/bcm2079x/board.mk
 
 # inherit from the proprietary version
 include vendor/samsung/ks01ltexx/BoardConfigVendor.mk
+
+# inherit from the proprietary version
+include vendor/samsung/msm8974-common/BoardConfigVendor.mk

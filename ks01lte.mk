@@ -44,3 +44,6 @@ $(call inherit-product, vendor/samsung/ks01ltexx/ks01ltexx-vendor.mk)
 
 # msm8974-common
 $(call inherit-product, device/samsung/msm8974-common/common.mk)
+
+# Get non-open-source specific aspects
+$(call inherit-product, vendor/samsung/msm8974-common/msm8974-common-vendor.mk)
