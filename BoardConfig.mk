@@ -19,7 +19,6 @@ include device/samsung/msm8974-common/BoardConfig.mk
 DEVICE_PATH := device/samsung/ks01ltexx
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_ks01ltexx.txt
 
 # Build Fingerprint
